@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> WEB SCRAPPER</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom right, #182848, #0077b6);
+        /* Linear gradient from dark blue to light blue */
+        color: #fff; /* White text */
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+        box-shadow: 0 0 10px 2px #00f; /* Neon blue box shadow */
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #00f; /* Neon blue border */
+        border-radius: 5px;
+        background-color: #182848; /* Dark blue background */
+        color: #fff; /* White text */
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #00f; /* Neon blue button */
+        color: #fff; /* White text */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3; /* Darker shade of neon blue on hover */
+    }
+    #output {
+        margin-top: 20px;
+        color: #00f; /* Neon blue text color for output */
+    }
+    .error {
+        color: red;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>WEB SCRAPPER</h2>
+    <form method="post">
+        <input type="text" name="url" placeholder="Enter URL">
+        <button type="submit">Scrape</button>
+    </form>
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+    {% if text %}
+    <div id="output">{{ text }}</div>
+    {% endif %}
+</div>
+
+</body>
+</html>
